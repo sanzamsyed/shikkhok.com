@@ -1,0 +1,211 @@
+﻿@model KnowYourProfDesign.Models.Master
+
+
+
+@{
+    ViewBag.Title = "TeachersProfile";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+
+
+
+
+<head>
+
+
+
+
+
+
+
+    <link rel="stylesheet" href=@Url.Content("~/Content/Custom_User_Profile/vendors/linericon/style.css")>
+
+    <link rel="stylesheet" href=@Url.Content("~/Content/Custom_User_Profile/vendors/owl-carousel/owl.carousel.min.css")>
+    <link rel="stylesheet" href=@Url.Content("~/Content/Custom_User_Profile/vendors/lightbox/simpleLightbox.css")>
+    <link rel="stylesheet" href=@Url.Content("~/Content/Custom_User_Profile/vendors/nice-select/css/nice-select.css")>
+    <link rel="stylesheet" href=@Url.Content("~/Content/Custom_User_Profile/vendors/animate-css/animate.css")>
+    <link rel="stylesheet" href=@Url.Content("~/Content/Custom_User_Profile/vendors/popup/magnific-popup.css")>
+    <link rel="stylesheet" href=@Url.Content("~/Content/Custom_User_Profile/vendors/flaticon/flaticon.css")>
+
+
+    <!-------TEST--------->
+    @*<link rel="stylesheet" href=@Url.Content("~/Content/b_css/bootstrap.css")>
+        <link rel="stylesheet" href=@Url.Content("~/Content/b_css/style.css")>*@
+
+    <link rel="stylesheet" href=@Url.Content("~/Content/c_css/main.css")
+
+
+    <!-- main css -->
+    <link rel="stylesheet" href=@Url.Content("~/Content/Custom_User_Profile/css/style.css")>
+    <link rel="stylesheet" href=@Url.Content("~/Content/Custom_User_Profile/css/responsive.css")>
+
+
+
+
+
+</head>
+
+
+
+
+
+<body>
+
+    <section class="home_banner_area">
+        <div class="container box_1620">
+            <div class="banner_inner d-flex align-items-center">
+                <div class="banner_content">
+                    <div class="media">
+                        <div class="d-flex">
+                            <img src="~/Content/images/MyImages/proflist.png" alt="">
+                        </div>
+                        <div class="media-body">
+                            <div class="personal_text">
+                                <h6>Hello Everybody, i am</h6>
+                                <h1>@Session["MasterName"]</h1>
+                                <h2>Ahsanullah University of Science and Technology</h2>
+
+                                <h3>@Session["MasterStatus"]</h3>
+                                <h3>Department of @Session["Department"]</h3>
+                                <h4>@Session["Course"]</h4>
+
+                                <br /><br />
+                               
+                              
+                                <ul class="list basic_info">
+                                    <li><a href="#"><i class="lnr lnr-calendar-full"></i> 12th December, 1996</a></li>
+                                    <li><a href="#"><i class="lnr lnr-phone-handset"></i> @Session["MasterPhone"]</a></li>
+                                    <li><a href="#"><i class="lnr lnr-envelope"></i>@Session["MasterEmail"]</a></li>
+                                    <li><a href="#"><i class="lnr lnr-home"></i> 61 Alormela, Kishoreganj</a></li>
+                                </ul>
+                                <ul class="list personal_social">
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br />
+
+    <h3 class="text-center">Comments</h3>
+    <br />
+    @*<section>
+            <div class='container box_1170'>
+                <div class='row justify-content-center'>
+
+
+                    @foreach (var post in )
+                    {
+                        @Html.DisplayFor(m => post.PostTitle)
+                        // display other properties
+
+
+                    <div class='col-lg-10'>
+                        <div class='post-box mb-30'>
+                            <div class='d-flex'>
+                                <div>
+                                    <a href='#'>
+                                        <img src='img/author/a1.png' alt=''>
+                                    </a>
+                                </div>
+                                <div class='post-meta'>
+                                    <div class='meta-head'>
+                                        <h4 class='ArnobsTextNormal'></h4>
+                                    </div>
+                                    <div class='meta-details'>
+                                        <ul>
+                                            <li>
+
+
+                                                <i class='fa fa-calendar' aria-hidden='true'></i> ABC
+
+                                            </li>
+
+                                            <li>
+
+
+                                                <i class='fa fa-book' aria-hidden='true'></i>ABC
+
+                                            </li>
+
+                                            <br>
+                                            <br>
+                                            <h3>ABC</h3>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    }
+
+
+
+
+
+                    <br />
+                    <br />
+
+
+
+
+
+
+
+
+                </div>
+
+            </div>
+
+        </section>*@
+
+
+    <div>
+        @{Html.RenderAction("ShowRelatedReviews", "AdminReview");}
+    </div>
+
+    <br />
+    
+    @if (Session["UserID"] != null)
+    {
+    <div>
+        @try
+        {
+            { Html.RenderAction("PostReview", "AdminReview"); }
+        }
+        catch (Exception e)
+        {
+
+        }
+    </div>
+    }
+
+
+
+
+
+
+
+
+
+</body>
+
+@*<script type="text/javascript">
+
+    window.location.href = "@Url.Action("Index","Home")";
+
+
+
+</script>*@
+
+
+

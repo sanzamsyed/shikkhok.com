@@ -1,0 +1,24 @@
+﻿@model KnowYourProfDesign.Models.ContactUs
+
+@{
+    ViewBag.Title = "SomeAction";
+    var message = TempData["AlertMessage"] ?? string.Empty;
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+
+
+<script type="text/javascript">
+    var message = '@message';
+    if(message)
+        alert(message);
+
+    window.location.href = "@Url.Action("Index","Home")";
+
+
+
+</script>
+
+
+
+

@@ -1,0 +1,104 @@
+﻿@model KnowYourProfDesign.Models.ContactUs
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<head>
+
+
+</head>
+
+<body>
+
+    <section class="page-title-section overlay MyCustomBackground">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <ul class="list-inline custom-breadcrumb">
+                        <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="page-link">Contact Us</a></li>
+                        <li class="list-inline-item text-white h3 font-secondary nasted"></li>
+                    </ul>
+                    <p class="text-lighten">Do you have other questions? Don't worry, there aren't any dumb questions. Just fill out the form below and we'll get back to you as soon as possible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="section-title">Contact Us</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-7 mb-4 mb-lg-0">
+
+                    @if (ViewBag.Message != null)
+                    {
+                        <div class="form-group">
+
+                            <div class="text-center"><text>@ViewBag.Message</text></div>
+                        </div>
+                    }
+
+                    else
+                    {
+
+                        using (Html.BeginForm())
+                        {
+                        @*<input type="text" class="form-control mb-3" id="name" name="name" placeholder="Your Name">*@
+
+                        @Html.EditorFor(model => model.ContactName, new { htmlAttributes = new { placeholder = "Your Name", required = "required", @class = "form-control mb-3" } })
+                        @Html.ValidationMessageFor(model => model.ContactName, "", new { @class = "text-danger" })
+
+                        @*<input type="email" class="form-control mb-3" id="mail" name="mail" placeholder="Your Email">*@
+
+                        @Html.EditorFor(model => model.ContactEmail, new { htmlAttributes = new { placeholder = "Your Email", required = "required", @class = "form-control mb-3" } })
+                        @Html.ValidationMessageFor(model => model.ContactEmail, "", new { @class = "text-danger" })
+
+
+                        @*<input type="text" class="form-control mb-3" id="subject" name="subject" placeholder="Subject">*@
+
+                        @Html.EditorFor(model => model.ContactSubject, new { htmlAttributes = new { placeholder = "Subject", required = "required", @class = "form-control mb-3" } })
+                        @Html.ValidationMessageFor(model => model.ContactSubject, "", new { @class = "text-danger" })
+
+
+
+                        @*<textarea name="message" id="message" class="form-control mb-3" placeholder="Your Message"></textarea>*@
+
+                        @Html.EditorFor(model => model.ContactText, new { htmlAttributes = new { placeholder = "Your Message", required = "required", @class = "form-control mb-3" } })
+                        @Html.ValidationMessageFor(model => model.ContactText, "", new { @class = "text-danger" })
+
+                        <button type="submit" value="send" class="btn btn-primary">SEND MESSAGE</button>
+
+
+                        @*<a href="@Url.Action("SaveContacts", "ContactUs")" class="btn btn-primary">Fire Away!</a>*@
+
+
+                        }
+
+                    }
+                </div>
+                <div class="col-lg-5">
+                    <p class="mb-5">If you have any queries about the system or want any changes feel free to let us know!</p>
+                    <a href="tel:+8801777258585" class="text-color h5 d-block">+88017777258585</a>
+                    <a href="mailto:yourmail@email.com" class="mb-5 text-color h5 d-block">sanzamsyed71@gmail.com</a>
+                    <p>141-142 Love Road, Tegaon Industrial Area<br>Dhaka, Bangladesh</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /contact -->
+    <!-- gmap -->
+    <section class="section pt-0">
+        <!-- Google Map -->
+        <div id="map_canvas" data-latitude="51.507351" data-longitude="-0.127758"></div>
+    </section>
+
+
+
+</body>
+

@@ -1,0 +1,15 @@
+﻿@model KnowYourProfDesign.Models.ContactUs
+
+@{
+    ViewBag.Title = "SaveContacts";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+@if (ViewBag.Message != null)
+{
+    <div class="form-group">
+
+        <div class="text-center"><text>@ViewBag.Message</text></div>
+    </div>
+}
+

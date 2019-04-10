@@ -1,0 +1,788 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6042D217-0D3A-4022-981D-FA317FBAD6DD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KnowYourProfDesign</RootNamespace>
+    <AssemblyName>KnowYourProfDesign</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Jmelosegui.Mvc.GoogleMap, Version=0.8.0.0, Culture=neutral, PublicKeyToken=bf3d287218d508fe, processorArchitecture=MSIL">
+      <HintPath>..\packages\Jmelosegui.Mvc.Googlemap.0.8.0.0\lib\net45\Jmelosegui.Mvc.GoogleMap.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\b_css\bootstrap.css" />
+    <Content Include="Content\b_css\breadcrumb.css" />
+    <Content Include="Content\b_css\b_comment_bootstrap.css" />
+    <Content Include="Content\b_css\b_comment_style.css" />
+    <Content Include="Content\b_css\font-awesome.min.css" />
+    <Content Include="Content\b_css\responsive.css" />
+    <Content Include="Content\b_css\style.css" />
+    <Content Include="Content\b_css\_about.css" />
+    <Content Include="Content\b_css\_courses.css" />
+    <Content Include="Content\b_css\_feature.css" />
+    <Content Include="Content\b_css\_gallery.css" />
+    <Content Include="Content\b_css\_instagram.css" />
+    <Content Include="Content\b_css\_price.css" />
+    <Content Include="Content\b_css\_service.css" />
+    <Content Include="Content\b_css\_testimonials.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\Custom_Login\Login\css\main.css" />
+    <Content Include="Content\Custom_Login\Login\css\util.css" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Content\Custom_Login\Login\fonts\montserrat\OFL.txt" />
+    <Content Include="Content\Custom_Login\Login\images\icons\favicon.ico" />
+    <Content Include="Content\Custom_Login\Login\images\img-01.png" />
+    <Content Include="Content\Custom_Login\Login\index.html" />
+    <Content Include="Content\Custom_Login\Login\js\main.js" />
+    <Content Include="Content\Custom_Login\Login\vendor\animate\animate.css" />
+    <Content Include="Content\Custom_Login\Login\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Content\Custom_Login\Login\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Content\Custom_Login\Login\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Content\Custom_Login\Login\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\Custom_Login\Login\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\Custom_Login\Login\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\Custom_Login\Login\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\Custom_Login\Login\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\Custom_Login\Login\vendor\bootstrap\js\popper.js" />
+    <Content Include="Content\Custom_Login\Login\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Content\Custom_Login\Login\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Content\Custom_Login\Login\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Content\Custom_Login\Login\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Content\Custom_Login\Login\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Content\Custom_Login\Login\vendor\select2\select2.css" />
+    <Content Include="Content\Custom_Login\Login\vendor\select2\select2.js" />
+    <Content Include="Content\Custom_Login\Login\vendor\select2\select2.min.css" />
+    <Content Include="Content\Custom_Login\Login\vendor\select2\select2.min.js" />
+    <Content Include="Content\Custom_Login\Login\vendor\tilt\tilt.jquery.min.js" />
+    <Content Include="Content\Custom_User_Profile\css\bootstrap.css" />
+    <Content Include="Content\Custom_User_Profile\css\responsive.css" />
+    <Content Include="Content\Custom_User_Profile\css\style.css" />
+    <Content Include="Content\Custom_User_Profile\img\banner\banner-2.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\banner\banner.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\banner\home-banner.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\banner\shap-1.png" />
+    <Content Include="Content\Custom_User_Profile\img\banner\shap-2.png" />
+    <Content Include="Content\Custom_User_Profile\img\blog\add.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\blog\author.png" />
+    <Content Include="Content\Custom_User_Profile\img\blog\c1.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\blog\c2.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\blog\c3.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\blog\c4.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\blog\c5.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\blog\c6.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\blog\cat-post\cat-post-1.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\blog\cat-post\cat-post-2.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\blog\cat-post\cat-post-3.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\blog\causes\causes-1.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\blog\causes\causes-2.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\blog\causes\causes-3.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\blog\feature-img1.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\blog\main-blog\m-blog-1.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\blog\main-blog\m-blog-2.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\blog\main-blog\m-blog-3.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\blog\main-blog\m-blog-4.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\blog\main-blog\m-blog-5.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\blog\next.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\blog\popular-post\post1.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\blog\popular-post\post2.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\blog\popular-post\post3.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\blog\popular-post\post4.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\blog\post-img1.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\blog\post-img2.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\blog\prev.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\elements\a.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\elements\a2.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\elements\d.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\elements\disabled-check.png" />
+    <Content Include="Content\Custom_User_Profile\img\elements\disabled-radio.png" />
+    <Content Include="Content\Custom_User_Profile\img\elements\f1.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\elements\f2.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\elements\f3.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\elements\f4.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\elements\f5.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\elements\f6.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\elements\f7.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\elements\f8.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\elements\g1.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\elements\g2.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\elements\g3.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\elements\g4.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\elements\g5.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\elements\g6.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\elements\g7.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\elements\g8.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\elements\primary-check.png" />
+    <Content Include="Content\Custom_User_Profile\img\elements\primary-radio.png" />
+    <Content Include="Content\Custom_User_Profile\img\elements\success-check.png" />
+    <Content Include="Content\Custom_User_Profile\img\elements\success-radio.png" />
+    <Content Include="Content\Custom_User_Profile\img\elements\user1.png" />
+    <Content Include="Content\Custom_User_Profile\img\elements\user2.png" />
+    <Content Include="Content\Custom_User_Profile\img\favicon.png" />
+    <Content Include="Content\Custom_User_Profile\img\gallery\icon.png" />
+    <Content Include="Content\Custom_User_Profile\img\gallery\portfolio_details.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\gallery\project-1.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\gallery\project-2.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\gallery\project-3.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\gallery\project-4.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\gallery\project-5.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\gallery\project-6.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\instagram\Image-01.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\instagram\Image-02.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\instagram\Image-03.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\instagram\Image-04.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\instagram\Image-05.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\instagram\Image-06.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\instagram\Image-07.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\instagram\Image-08.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\instagram\ins-1.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\instagram\ins-2.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\instagram\ins-3.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\instagram\ins-4.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\instagram\ins-5.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\instagram\ins-6.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\logo.png" />
+    <Content Include="Content\Custom_User_Profile\img\personal-2.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\personal.jpg" />
+    <Content Include="Content\Custom_User_Profile\img\user.png" />
+    <Content Include="Content\c_css\animate.min.css" />
+    <Content Include="Content\c_css\bootstrap.css" />
+    <Content Include="Content\c_css\bootstrap\bootstrap-grid.css" />
+    <Content Include="Content\c_css\bootstrap\bootstrap-reboot.css" />
+    <Content Include="Content\c_css\bootstrap\bootstrap.css" />
+    <Content Include="Content\c_css\font-awesome.min.css" />
+    <Content Include="Content\c_css\hexagons.min.css" />
+    <Content Include="Content\c_css\jquery.DonutWidget.min.css" />
+    <Content Include="Content\c_css\jquerysctipttop.css" />
+    <Content Include="Content\c_css\linearicons.css" />
+    <Content Include="Content\c_css\magnific-popup.css" />
+    <Content Include="Content\c_css\main.css" />
+    <Content Include="Content\c_css\nice-select.css" />
+    <Content Include="Content\c_css\owl.carousel.css" />
+    <Content Include="Content\images\about\about-page.jpg" />
+    <Content Include="Content\images\about\about-us.jpg" />
+    <Content Include="Content\images\about\video-thumb.jpg" />
+    <Content Include="Content\images\backgrounds\page-title.jpg" />
+    <Content Include="Content\images\backgrounds\success-story.jpg" />
+    <Content Include="Content\images\banner\banner-1.jpg" />
+    <Content Include="Content\images\banner\banner-2.jpg" />
+    <Content Include="Content\images\banner\banner-feature.png" />
+    <Content Include="Content\images\blog\blog-single.jpg" />
+    <Content Include="Content\images\blog\post-1.jpg" />
+    <Content Include="Content\images\blog\post-2.jpg" />
+    <Content Include="Content\images\blog\post-3.jpg" />
+    <Content Include="Content\images\courses\artdesign.jpg" />
+    <Content Include="Content\images\courses\article.jpg" />
+    <Content Include="Content\images\courses\course-1.jpg" />
+    <Content Include="Content\images\courses\course-2.jpg" />
+    <Content Include="Content\images\courses\course-3.jpg" />
+    <Content Include="Content\images\courses\course-4.jpg" />
+    <Content Include="Content\images\courses\course-5.jpg" />
+    <Content Include="Content\images\courses\course-6.jpg" />
+    <Content Include="Content\images\courses\course-single.jpg" />
+    <Content Include="Content\images\courses\creativewriting.jpg" />
+    <Content Include="Content\images\courses\photography.jpg" />
+    <Content Include="Content\images\courses\programming.jpg" />
+    <Content Include="Content\images\courses\reading.jpg" />
+    <Content Include="Content\images\courses\tourist.jpg" />
+    <Content Include="Content\images\event-speakers\speaker-1.jpg" />
+    <Content Include="Content\images\event-speakers\speaker-2.jpg" />
+    <Content Include="Content\images\event-speakers\speaker-3.jpg" />
+    <Content Include="Content\images\event-speakers\speaker-4.jpg" />
+    <Content Include="Content\images\events\event-1.jpg" />
+    <Content Include="Content\images\events\event-2.jpg" />
+    <Content Include="Content\images\events\event-3.jpg" />
+    <Content Include="Content\images\events\event-single.jpg" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\MyImages\fatimamam.jpg" />
+    <Content Include="Content\images\MyImages\newteacher.png" />
+    <Content Include="Content\images\MyImages\nayeemsir.jpg" />
+    <Content Include="Content\images\MyImages\proflist.png" />
+    <Content Include="Content\images\MyImages\reviewuser.png" />
+    <Content Include="Content\images\MyImages\shoebsir.jpg" />
+    <Content Include="Content\images\MyImages\shoebsir2.jpg" />
+    <Content Include="Content\images\MyImages\shoebsirfinal.jpg" />
+    <Content Include="Content\images\MyImages\success.jpg" />
+    <Content Include="Content\images\MyImages\userprofile.png" />
+    <Content Include="Content\images\research\research-1.jpg" />
+    <Content Include="Content\images\research\research-2.jpg" />
+    <Content Include="Content\images\research\research-3.jpg" />
+    <Content Include="Content\images\research\research-4.jpg" />
+    <Content Include="Content\images\research\research-5.jpg" />
+    <Content Include="Content\images\research\research-6.jpg" />
+    <Content Include="Content\images\scholarship\scholarship-item-1.jpg" />
+    <Content Include="Content\images\scholarship\scholarship-item-2.jpg" />
+    <Content Include="Content\images\scholarship\scholarship-item-3.jpg" />
+    <Content Include="Content\images\scholarship\scholarship.jpg" />
+    <Content Include="Content\images\teacher.jpg" />
+    <Content Include="Content\images\teachers\teacher-1.jpg" />
+    <Content Include="Content\images\teachers\teacher-2.jpg" />
+    <Content Include="Content\images\teachers\teacher-3.jpg" />
+    <Content Include="Content\js\script.js" />
+    <Content Include="Content\plugins\animate\animate.css" />
+    <Content Include="Content\plugins\aos\aos.css" />
+    <Content Include="Content\plugins\aos\aos.js" />
+    <Content Include="Content\plugins\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\plugins\bootstrap\bootstrap.min.js" />
+    <Content Include="Content\plugins\google-map\gmap.js" />
+    <Content Include="Content\plugins\google-map\images\marker.png" />
+    <Content Include="Content\plugins\jQuery\jquery.min.js" />
+    <Content Include="Content\plugins\mixitup\mixitup.min.js" />
+    <Content Include="Content\plugins\slick\ajax-loader.gif" />
+    <Content Include="Content\plugins\slick\fonts\slick.svg" />
+    <Content Include="Content\plugins\slick\slick.css" />
+    <Content Include="Content\plugins\slick\slick.min.js" />
+    <Content Include="Content\plugins\themify-icons\fonts\themify.svg" />
+    <Content Include="Content\plugins\themify-icons\themify-icons.css" />
+    <Content Include="Content\plugins\venobox\venobox.css" />
+    <Content Include="Content\plugins\venobox\venobox.min.js" />
+    <Content Include="Global.asax" />
+    <Content Include="images\about\about-page.jpg" />
+    <Content Include="images\about\about-us.jpg" />
+    <Content Include="images\about\video-thumb.jpg" />
+    <Content Include="images\backgrounds\page-title.jpg" />
+    <Content Include="images\backgrounds\success-story.jpg" />
+    <Content Include="images\banner\banner-2.jpg" />
+    <Content Include="images\banner\banner-1.jpg" />
+    <Content Include="images\banner\banner-feature.png" />
+    <Content Include="images\blog\blog-single.jpg" />
+    <Content Include="images\blog\post-1.jpg" />
+    <Content Include="images\blog\post-2.jpg" />
+    <Content Include="images\blog\post-3.jpg" />
+    <Content Include="images\courses\course-1.jpg" />
+    <Content Include="images\courses\course-2.jpg" />
+    <Content Include="images\courses\course-3.jpg" />
+    <Content Include="images\courses\course-4.jpg" />
+    <Content Include="images\courses\course-5.jpg" />
+    <Content Include="images\courses\course-6.jpg" />
+    <Content Include="images\courses\course-single.jpg" />
+    <Content Include="images\event-speakers\speaker-1.jpg" />
+    <Content Include="images\event-speakers\speaker-2.jpg" />
+    <Content Include="images\event-speakers\speaker-3.jpg" />
+    <Content Include="images\event-speakers\speaker-4.jpg" />
+    <Content Include="images\events\event-1.jpg" />
+    <Content Include="images\events\event-2.jpg" />
+    <Content Include="images\events\event-3.jpg" />
+    <Content Include="images\events\event-single.jpg" />
+    <Content Include="images\logo2.png" />
+    <Content Include="images\logo3.png" />
+    <Content Include="images\research\research-1.jpg" />
+    <Content Include="images\research\research-2.jpg" />
+    <Content Include="images\research\research-3.jpg" />
+    <Content Include="images\research\research-4.jpg" />
+    <Content Include="images\research\research-5.jpg" />
+    <Content Include="images\research\research-6.jpg" />
+    <Content Include="images\scholarship\scholarship-item-1.jpg" />
+    <Content Include="images\scholarship\scholarship-item-2.jpg" />
+    <Content Include="images\scholarship\scholarship-item-3.jpg" />
+    <Content Include="images\scholarship\scholarship.jpg" />
+    <Content Include="images\secban.jpg" />
+    <Content Include="images\teacher.jpg" />
+    <Content Include="images\teachers\t1.png" />
+    <Content Include="images\teachers\t2.png" />
+    <Content Include="images\teachers\t3.png" />
+    <Content Include="images\teachers\teacher-1.jpg" />
+    <Content Include="images\teachers\teacher-2.jpg" />
+    <Content Include="images\teachers\teacher-3.jpg" />
+    <Content Include="images\whydo.jpg" />
+    <Content Include="kypImages\ani.jpg" />
+    <Content Include="kypImages\anika.png" />
+    <Content Include="kypImages\Arnob.jpg" />
+    <Content Include="kypImages\arnob.png" />
+    <Content Include="kypImages\arnob2.jpg" />
+    <Content Include="kypImages\background.jpg" />
+    <Content Include="kypImages\bg3.jpeg" />
+    <Content Include="kypImages\carousel1.jpg" />
+    <Content Include="kypImages\carousel2.jpg" />
+    <Content Include="kypImages\carousel3.jpg" />
+    <Content Include="kypImages\carousel4.jpg" />
+    <Content Include="kypImages\exp2.jpg" />
+    <Content Include="kypImages\footer-icon.png" />
+    <Content Include="kypImages\grad.JPG" />
+    <Content Include="kypImages\jpg.png" />
+    <Content Include="kypImages\middlebackground.jpg" />
+    <Content Include="kypImages\middlebackground2.jpg" />
+    <Content Include="kypImages\owl.png" />
+    <Content Include="kypImages\owl2.png" />
+    <Content Include="kypImages\primebanner.jpg" />
+    <Content Include="kypImages\professor.png" />
+    <Content Include="kypImages\student.png" />
+    <Content Include="kypImages\studentprofile.jpg" />
+    <Content Include="kypImages\studentprofile2.jpg" />
+    <Content Include="kypImages\user-image.png" />
+    <Content Include="kypImages\user.png" />
+    <Content Include="kypImages\welcome3.jpg" />
+    <Content Include="kypImages\welcome4.jpg" />
+    <Content Include="Content\b_css\breadcrumb.css.map" />
+    <Content Include="Content\b_css\style.css.map" />
+    <Content Include="Content\b_css\_about.css.map" />
+    <Content Include="Content\b_css\_courses.css.map" />
+    <Content Include="Content\b_css\_feature.css.map" />
+    <Content Include="Content\b_css\_gallery.css.map" />
+    <Content Include="Content\b_css\_instagram.css.map" />
+    <Content Include="Content\b_css\_price.css.map" />
+    <Content Include="Content\b_css\_service.css.map" />
+    <Content Include="Content\b_css\_testimonials.css.map" />
+    <Content Include="Content\c_css\.DS_Store" />
+    <Content Include="Content\c_css\bootstrap.map" />
+    <Content Include="Content\c_css\main.css.map" />
+    <Content Include="Content\c_css\main.map" />
+    <None Include="Scripts\jquery-2.1.4-vsdoc.js" />
+    <Content Include="Scripts\jmelosegui.googlemap.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\markerclusterer.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminContactUsController.cs" />
+    <Compile Include="Controllers\AdminMasterController.cs" />
+    <Compile Include="Controllers\AdminReviewController.cs" />
+    <Compile Include="Controllers\AdminUserAccountController.cs" />
+    <Compile Include="Controllers\ContactUsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MasterController.cs" />
+    <Compile Include="Controllers\UserAccountsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903251714330_RemovingFirstNameAndLastNameAsWellAsRetypePassword.cs" />
+    <Compile Include="Migrations\201903251714330_RemovingFirstNameAndLastNameAsWellAsRetypePassword.Designer.cs">
+      <DependentUpon>201903251714330_RemovingFirstNameAndLastNameAsWellAsRetypePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903261317181_AddingUserStatusWithAnika.cs" />
+    <Compile Include="Migrations\201903261317181_AddingUserStatusWithAnika.Designer.cs">
+      <DependentUpon>201903261317181_AddingUserStatusWithAnika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903261320115_RemovingUserStatusOnlyToBeAddedLater.cs" />
+    <Compile Include="Migrations\201903261320115_RemovingUserStatusOnlyToBeAddedLater.Designer.cs">
+      <DependentUpon>201903261320115_RemovingUserStatusOnlyToBeAddedLater.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903272219074_UniqueConstraints.cs" />
+    <Compile Include="Migrations\201903272219074_UniqueConstraints.Designer.cs">
+      <DependentUpon>201903272219074_UniqueConstraints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903272231148_AddingEmailAsUnique.cs" />
+    <Compile Include="Migrations\201903272231148_AddingEmailAsUnique.Designer.cs">
+      <DependentUpon>201903272231148_AddingEmailAsUnique.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903272234132_AddingFullnameAndUserNameAsLetterOnly.cs" />
+    <Compile Include="Migrations\201903272234132_AddingFullnameAndUserNameAsLetterOnly.Designer.cs">
+      <DependentUpon>201903272234132_AddingFullnameAndUserNameAsLetterOnly.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904060331127_AddingContactUsTable.cs" />
+    <Compile Include="Migrations\201904060331127_AddingContactUsTable.Designer.cs">
+      <DependentUpon>201904060331127_AddingContactUsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904060406019_AddingContactUsName.cs" />
+    <Compile Include="Migrations\201904060406019_AddingContactUsName.Designer.cs">
+      <DependentUpon>201904060406019_AddingContactUsName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904060957272_AddingTeacherTable.cs" />
+    <Compile Include="Migrations\201904060957272_AddingTeacherTable.Designer.cs">
+      <DependentUpon>201904060957272_AddingTeacherTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904061007164_ConfusedAboutTeacherTable.cs" />
+    <Compile Include="Migrations\201904061007164_ConfusedAboutTeacherTable.Designer.cs">
+      <DependentUpon>201904061007164_ConfusedAboutTeacherTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904061014025_AddingMaster.cs" />
+    <Compile Include="Migrations\201904061014025_AddingMaster.Designer.cs">
+      <DependentUpon>201904061014025_AddingMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904061018498_CheckingWhatIsActuallyWrongWithLoginAfterAddingTeacherTable.cs" />
+    <Compile Include="Migrations\201904061018498_CheckingWhatIsActuallyWrongWithLoginAfterAddingTeacherTable.Designer.cs">
+      <DependentUpon>201904061018498_CheckingWhatIsActuallyWrongWithLoginAfterAddingTeacherTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904061103103_AfterAddingTableMaster.cs" />
+    <Compile Include="Migrations\201904061103103_AfterAddingTableMaster.Designer.cs">
+      <DependentUpon>201904061103103_AfterAddingTableMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904080334273_Fresh.cs" />
+    <Compile Include="Migrations\201904080334273_Fresh.Designer.cs">
+      <DependentUpon>201904080334273_Fresh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904080337122_ReviewTest.cs" />
+    <Compile Include="Migrations\201904080337122_ReviewTest.Designer.cs">
+      <DependentUpon>201904080337122_ReviewTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904080341217_Um.cs" />
+    <Compile Include="Migrations\201904080341217_Um.Designer.cs">
+      <DependentUpon>201904080341217_Um.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904081056114_AddingViewModel.cs" />
+    <Compile Include="Migrations\201904081056114_AddingViewModel.Designer.cs">
+      <DependentUpon>201904081056114_AddingViewModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904100720299_TryingToFixOnlyLetterError.cs" />
+    <Compile Include="Migrations\201904100720299_TryingToFixOnlyLetterError.Designer.cs">
+      <DependentUpon>201904100720299_TryingToFixOnlyLetterError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904100730185_StilLTryingToFix.cs" />
+    <Compile Include="Migrations\201904100730185_StilLTryingToFix.Designer.cs">
+      <DependentUpon>201904100730185_StilLTryingToFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904100732474_StillNoWork.cs" />
+    <Compile Include="Migrations\201904100732474_StillNoWork.Designer.cs">
+      <DependentUpon>201904100732474_StillNoWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ContactUs.cs" />
+    <Compile Include="Models\Master.cs" />
+    <Compile Include="Models\MyDbContext.cs" />
+    <Compile Include="Models\Review.cs" />
+    <Compile Include="Models\UserAccount.cs" />
+    <Compile Include="Models\ViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="Content\css\maps\style.css.map" />
+    <Content Include="Content\fonts\Futura-Bold.woff" />
+    <Content Include="Content\plugins\slick\fonts\slick.eot" />
+    <Content Include="Content\plugins\slick\fonts\slick.ttf" />
+    <Content Include="Content\plugins\slick\fonts\slick.woff" />
+    <Content Include="Content\plugins\themify-icons\fonts\themify.eot" />
+    <Content Include="Content\plugins\themify-icons\fonts\themify.ttf" />
+    <Content Include="Content\plugins\themify-icons\fonts\themify.woff" />
+    <Content Include="Content\scss\style.scss" />
+    <Content Include="Content\scss\templates\_homepage.scss" />
+    <Content Include="Content\scss\templates\_navigation.scss" />
+    <Content Include="Content\scss\templates\_otherspage.scss" />
+    <Content Include="Content\scss\templates\_slider.scss" />
+    <Content Include="Content\scss\_buttons.scss" />
+    <Content Include="Content\scss\_common.scss" />
+    <Content Include="Content\scss\_mixins.scss" />
+    <Content Include="Content\scss\_typography.scss" />
+    <Content Include="Content\scss\_variables.scss" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Content\Custom_Login\Login\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Content\Custom_Login\Login\fonts\montserrat\Montserrat-Black.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\montserrat\Montserrat-Bold.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\montserrat\Montserrat-Italic.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\montserrat\Montserrat-Light.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\montserrat\Montserrat-Medium.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\montserrat\Montserrat-Regular.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\montserrat\Montserrat-Thin.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="Content\Custom_Login\Login\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Content\Custom_Login\Login\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Content\Custom_Login\Login\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\Custom_Login\Login\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\Custom_Login\Login\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\Custom_Login\Login\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\Custom_Login\Login\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\Custom_User_Profile\img\.DS_Store" />
+    <Content Include="Content\Custom_User_Profile\img\elements\_DS_Store" />
+    <None Include="packages.config" />
+    <Content Include="Views\Shared\_MyLayout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\UserAccounts\Login.cshtml" />
+    <Content Include="Views\UserAccounts\Register.cshtml" />
+    <Content Include="Views\UserAccounts\LoggedIn.cshtml" />
+    <Content Include="Views\AdminUserAccount\Create.cshtml" />
+    <Content Include="Views\AdminUserAccount\Delete.cshtml" />
+    <Content Include="Views\AdminUserAccount\Details.cshtml" />
+    <Content Include="Views\AdminUserAccount\Edit.cshtml" />
+    <Content Include="Views\AdminUserAccount\Index.cshtml" />
+    <Content Include="Views\ContactUs\Index.cshtml" />
+    <Content Include="Scripts\jquery-2.1.4.min.map" />
+    <Content Include="Views\ContactUs\SaveContacts.cshtml" />
+    <Content Include="Views\ContactUs\SomeAction.cshtml" />
+    <Content Include="Views\AdminContactUs\Create.cshtml" />
+    <Content Include="Views\AdminContactUs\Delete.cshtml" />
+    <Content Include="Views\AdminContactUs\Details.cshtml" />
+    <Content Include="Views\AdminContactUs\Edit.cshtml" />
+    <Content Include="Views\AdminContactUs\Index.cshtml" />
+    <Content Include="Views\AdminMaster\Create.cshtml" />
+    <Content Include="Views\AdminMaster\Delete.cshtml" />
+    <Content Include="Views\AdminMaster\Details.cshtml" />
+    <Content Include="Views\AdminMaster\Edit.cshtml" />
+    <Content Include="Views\AdminMaster\Index.cshtml" />
+    <Content Include="Views\Master\ShowTeacherList.cshtml" />
+    <Content Include="Views\Master\TeachersProfile.cshtml" />
+    <Content Include="Views\Master\ViewTeachersProfile.cshtml" />
+    <Content Include="Views\AdminReview\Create.cshtml" />
+    <Content Include="Views\AdminReview\Delete.cshtml" />
+    <Content Include="Views\AdminReview\Details.cshtml" />
+    <Content Include="Views\AdminReview\Edit.cshtml" />
+    <Content Include="Views\AdminReview\Index.cshtml" />
+    <Content Include="Views\AdminReview\ShowRelatedReviews.cshtml" />
+    <Content Include="Views\AdminReview\PostReview.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\c_css\theme\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201903251714330_RemovingFirstNameAndLastNameAsWellAsRetypePassword.resx">
+      <DependentUpon>201903251714330_RemovingFirstNameAndLastNameAsWellAsRetypePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903261317181_AddingUserStatusWithAnika.resx">
+      <DependentUpon>201903261317181_AddingUserStatusWithAnika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903261320115_RemovingUserStatusOnlyToBeAddedLater.resx">
+      <DependentUpon>201903261320115_RemovingUserStatusOnlyToBeAddedLater.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903272219074_UniqueConstraints.resx">
+      <DependentUpon>201903272219074_UniqueConstraints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903272231148_AddingEmailAsUnique.resx">
+      <DependentUpon>201903272231148_AddingEmailAsUnique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903272234132_AddingFullnameAndUserNameAsLetterOnly.resx">
+      <DependentUpon>201903272234132_AddingFullnameAndUserNameAsLetterOnly.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904060331127_AddingContactUsTable.resx">
+      <DependentUpon>201904060331127_AddingContactUsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904060406019_AddingContactUsName.resx">
+      <DependentUpon>201904060406019_AddingContactUsName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904060957272_AddingTeacherTable.resx">
+      <DependentUpon>201904060957272_AddingTeacherTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904061007164_ConfusedAboutTeacherTable.resx">
+      <DependentUpon>201904061007164_ConfusedAboutTeacherTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904061014025_AddingMaster.resx">
+      <DependentUpon>201904061014025_AddingMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904061018498_CheckingWhatIsActuallyWrongWithLoginAfterAddingTeacherTable.resx">
+      <DependentUpon>201904061018498_CheckingWhatIsActuallyWrongWithLoginAfterAddingTeacherTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904061103103_AfterAddingTableMaster.resx">
+      <DependentUpon>201904061103103_AfterAddingTableMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904080334273_Fresh.resx">
+      <DependentUpon>201904080334273_Fresh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904080337122_ReviewTest.resx">
+      <DependentUpon>201904080337122_ReviewTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904080341217_Um.resx">
+      <DependentUpon>201904080341217_Um.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904081056114_AddingViewModel.resx">
+      <DependentUpon>201904081056114_AddingViewModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904100720299_TryingToFixOnlyLetterError.resx">
+      <DependentUpon>201904100720299_TryingToFixOnlyLetterError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904100730185_StilLTryingToFix.resx">
+      <DependentUpon>201904100730185_StilLTryingToFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904100732474_StillNoWork.resx">
+      <DependentUpon>201904100732474_StillNoWork.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57411</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57411/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

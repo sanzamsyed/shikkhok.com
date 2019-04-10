@@ -1,0 +1,83 @@
+﻿@model KnowYourProfDesign.Models.UserAccount
+
+@{
+    ViewBag.Title = "LoggedIn";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+
+<head>
+
+       
+
+       
+   
+        
+       
+        <link rel="stylesheet" href=@Url.Content("~/Content/Custom_User_Profile/vendors/linericon/style.css")>
+       
+        <link rel="stylesheet" href=@Url.Content("~/Content/Custom_User_Profile/vendors/owl-carousel/owl.carousel.min.css")>
+        <link rel="stylesheet" href=@Url.Content("~/Content/Custom_User_Profile/vendors/lightbox/simpleLightbox.css")>
+        <link rel="stylesheet" href=@Url.Content("~/Content/Custom_User_Profile/vendors/nice-select/css/nice-select.css")>
+        <link rel="stylesheet" href=@Url.Content("~/Content/Custom_User_Profile/vendors/animate-css/animate.css")>
+        <link rel="stylesheet" href=@Url.Content("~/Content/Custom_User_Profile/vendors/popup/magnific-popup.css")>
+        <link rel="stylesheet" href=@Url.Content("~/Content/Custom_User_Profile/vendors/flaticon/flaticon.css")>
+        <!-- main css -->
+        <link rel="stylesheet" href=@Url.Content("~/Content/Custom_User_Profile/css/style.css")>
+        <link rel="stylesheet" href=@Url.Content("~/Content/Custom_User_Profile/css/responsive.css")>
+
+
+
+
+
+</head>
+
+
+
+
+
+<body>
+
+    <section class="home_banner_area">
+        <div class="container box_1620">
+            <div class="banner_inner d-flex align-items-center">
+                <div class="banner_content">
+                    <div class="media">
+                        <div class="d-flex">
+                            <img src="~/Content/images/MyImages/userprofile.png" alt="">
+                        </div>
+                        <div class="media-body">
+                            <div class="personal_text">
+                                
+                                <h2>@Session["FullName"]</h2>
+                                <h3>@Session["Username"]</h3>
+                                <h3>@Session["Email"]</h3>
+                            
+                              
+                                <ul class="list basic_info">
+                                    <li><a href="#"><i class="lnr lnr-calendar-full"></i> 12th December, 1996</a></li>
+                                    <li><a href="#"><i class="lnr lnr-phone-handset"></i> +8801777258585</a></li>
+                                    <li><a href="#"><i class="lnr lnr-envelope"></i>sanzam@gmail.com</a></li>
+                                    <li><a href="#"><i class="lnr lnr-home"></i> 61 Alormela, Kishoreganj</a></li>
+                                </ul>
+                                <ul class="list personal_social">
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+</body>
+

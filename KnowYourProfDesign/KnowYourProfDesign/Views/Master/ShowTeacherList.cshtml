@@ -1,0 +1,117 @@
+﻿@model IEnumerable<KnowYourProfDesign.Models.Master>
+
+@{
+    ViewBag.Title = "Teacher List";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<head>
+
+
+
+
+
+
+
+    <link rel="stylesheet" href=@Url.Content("~/Content/Custom_User_Profile/vendors/linericon/style.css")>
+    <link rel="stylesheet" href=@Url.Content("~/Content/Custom_User_Profile/vendors/owl-carousel/owl.carousel.min.css")>
+    <link rel="stylesheet" href=@Url.Content("~/Content/Custom_User_Profile/vendors/lightbox/simpleLightbox.css")>
+    <link rel="stylesheet" href=@Url.Content("~/Content/Custom_User_Profile/vendors/nice-select/css/nice-select.css")>
+    <link rel="stylesheet" href=@Url.Content("~/Content/Custom_User_Profile/vendors/animate-css/animate.css")>
+    <link rel="stylesheet" href=@Url.Content("~/Content/Custom_User_Profile/vendors/popup/magnific-popup.css")>
+    <link rel="stylesheet" href=@Url.Content("~/Content/Custom_User_Profile/vendors/flaticon/flaticon.css")>
+    <link rel="stylesheet" href=@Url.Content("~/Content/Custom_User_Profile/css/style.css")>
+    <link rel="stylesheet" href=@Url.Content("~/Content/Custom_User_Profile/css/responsive.css")>
+
+
+
+
+
+</head>
+
+
+
+
+
+<body>
+
+    <section class="page-title-section overlay MyCustomBackground">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <ul class="list-inline custom-breadcrumb">
+                        <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="page-link">Our teacher</a></li>
+                        <li class="list-inline-item text-white h3 font-secondary nasted"></li>
+                    </ul>
+                    <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /page title -->
+    <!-- teachers -->
+    <section class="section">
+        <div data-ref="mixitup-target" class="container">
+
+            <!-- teacher list -->
+            <div class="row" data-ref="mixitup-container">
+
+
+                @try
+                {
+
+                    foreach (var item in Model)
+                    {
+
+
+
+                    <!-- teacher -->
+                    <div data-ref="mixitup-target" class="col-lg-4 col-sm-6 mb-5 arts law">
+                        <div class="card border-0 rounded-0 hover-shadow">
+                            <img class="card-img-top rounded-0" src="~/Content/images/MyImages/proflist.png" alt="teacher">
+                            <div class="card-body">
+                                <a href="@Url.Action("ViewTeachersProfile", "Master" , new { id = item.MID })">
+                                    <h4 class="card-title text-center"> @Html.DisplayFor(modelItem => item.Name)</h4>
+                                </a>
+                                <p class="text-center">@item.Status</p>
+                                <ul class="list-inline text-center">
+                                    <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
+                                    <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
+                                    <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
+                                    <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- teacher -->
+
+
+
+                    }
+
+                }
+
+                catch(Exception e)
+                {
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+    </body>
+

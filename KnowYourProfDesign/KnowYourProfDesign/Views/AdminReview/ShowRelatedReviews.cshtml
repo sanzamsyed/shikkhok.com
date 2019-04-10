@@ -1,0 +1,99 @@
+﻿@model IEnumerable<KnowYourProfDesign.Models.Review>
+
+<section>
+    <div class='container box_1170'>
+        <div class='row justify-content-center'>
+
+
+            @try
+                        {
+
+
+
+                            foreach (var item in Model)
+                            {
+                                var tn = Session["MasterName"].ToString();
+                                if (item.TeacherName == tn)
+                                {
+                    <div class='col-lg-10'>
+                        <div class='post-box mb-30'>
+                            <div class='d-flex'>
+                                <div>
+                                    <a href='#'>
+                                        <img src='~/Content/images/MyImages/reviewuser.png' alt=''>
+                                    </a>
+                                </div>
+                                <div class='post-meta'>
+                                    <div class='meta-head'>
+                                        <h4 class='ArnobsTextNormal'></h4>
+                                    </div>
+                                    <div class='meta-details'>
+                                        <ul>
+                                            <li>
+
+
+                                                <i class='fa fa-calendar' aria-hidden='true'></i> @item.Username
+
+                                            </li>
+
+                                            <li>
+
+
+                                                <i class='fa fa-book' aria-hidden='true'></i>@item.ReviewDate
+
+                                            </li>
+
+                                            <li>
+
+
+                                                <i class='fa fa-book' aria-hidden='true'></i>
+
+                                            </li>
+
+
+                                            <br />
+                                            <br />
+                                            <h3>@item.ReviewText</h3>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+                    <br />
+                    <br />
+
+
+                    }
+            }
+
+            }
+
+            catch (Exception e)
+            {
+
+            }
+
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
